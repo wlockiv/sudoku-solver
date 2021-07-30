@@ -7,4 +7,4 @@
 ╚═══╩══╩══╩══╩╝╚╩══╝╚═══╩══╩═╩╝╚══╩╝
 ```
 
-This repo is a learning project. I'm making the algorithm by following along with [this video series on YouTube](https://www.youtube.com/watch?v=9aMUyoYDI-0&list=PLkTXsX7igf8edTYU92nU-f5Ntzuf-RKvW).
+This repo is a learning project for the C programming language. Turns out I learned a little about [backtracking](https://www.geeksforgeeks.org/backtracking-algorithms/) too. 

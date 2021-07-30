@@ -1,29 +1,8 @@
-#ifndef SUDOKU_H
-#define SUDOKU_H
+#ifndef PUZZLE_H
+#define PUZZLE_H
+#include <stdbool.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
-extern char POSSIBLE;
-extern int SIZE_ROWS;
-extern int SIZE_COLUMNS;
-
-typedef struct Box
-{
-    struct Box *next;
-} Box;
-
-typedef struct Square
-{
-    int number;
-    char code;
-    Box *box;
-    int row;
-    int col;
-} Square;
-
-int **createPuzzle();
-void printPuzzle();
-Square ***setUpPuzzle();
+void printPuzzle(int grid[9][9]);
+bool solveSudoku(int grid[9][9], int row, int col);
 
 #endif

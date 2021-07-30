@@ -1,21 +1,50 @@
+#include "lib/puzzle.h"
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "lib/puzzle.h"
 
-char POSSIBLE = 0x1FF;
-int SIZE_ROWS = 9;
-int SIZE_COLUMNS = 9;
+// Solution code: walker-solver-easy
+int EASY_PUZZLE[9][9] = {
+    {5, 0, 1, 6, 0, 7, 9, 0, 0}, //
+    {0, 0, 9, 0, 0, 3, 2, 5, 0}, //
+    {8, 2, 7, 0, 9, 0, 0, 0, 0}, //
+    {9, 0, 2, 0, 5, 1, 3, 7, 0}, //
+    {3, 0, 0, 9, 8, 0, 0, 0, 0}, //
+    {0, 0, 5, 7, 0, 6, 0, 0, 0}, //
+    {4, 0, 6, 0, 7, 5, 0, 3, 2}, //
+    {0, 1, 0, 0, 0, 0, 7, 0, 5}, //
+    {0, 0, 3, 0, 0, 0, 1, 9, 6}, //
+};
 
-int main()
-{
-    int **puzzle;
-    Square ***sudoku;
-    puzzle = createPuzzle();
+int HARD_PUZZLE[9][9] = {
+    {0, 0, 1, 0, 0, 3, 8, 0, 6}, //
+    {0, 0, 0, 5, 0, 0, 0, 7, 0}, //
+    {0, 0, 0, 1, 0, 4, 0, 3, 5}, //
+    {0, 0, 0, 0, 0, 0, 1, 6, 0}, //
+    {6, 2, 0, 8, 0, 7, 0, 4, 9}, //
+    {0, 5, 4, 0, 0, 0, 0, 0, 0}, //
+    {3, 7, 0, 2, 0, 1, 0, 0, 0}, //
+    {0, 1, 0, 0, 0, 9, 0, 0, 0}, //
+    {2, 0, 5, 3, 0, 0, 7, 0, 0}, //
+};
 
-    printPuzzle(puzzle);
+int VERY_HARD_PUZZLE[9][9] = {
+    {0, 0, 0, 6, 0, 0, 7, 5, 0}, //
+    {2, 0, 0, 0, 7, 3, 0, 0, 0}, //
+    {0, 0, 7, 0, 5, 0, 0, 9, 0}, //
+    {6, 2, 0, 8, 0, 0, 0, 1, 0}, //
+    {3, 0, 4, 0, 0, 0, 9, 0, 6}, //
+    {0, 1, 0, 0, 0, 6, 0, 4, 5}, //
+    {0, 9, 0, 0, 6, 0, 5, 0, 0}, //
+    {0, 0, 0, 5, 2, 0, 0, 0, 9}, //
+    {0, 4, 6, 0, 0, 7, 0, 0, 0}, //
+};
 
-    setUpPuzzle(puzzle);
+int main() {
+  if (solveSudoku(VERY_HARD_PUZZLE, 0, 0)) {
+    printPuzzle(VERY_HARD_PUZZLE);
+  } else
+    printf("no solution exists");
 
-    return 0;
+  return 0;
 }
